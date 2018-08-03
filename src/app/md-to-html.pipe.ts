@@ -6,6 +6,7 @@ import * as marked from 'marked';
 })
 export class MdToHtmlPipe implements PipeTransform {
   transform(value: string): any {
+    if (!value) { return {}; }
     return marked(value);
   }
 }

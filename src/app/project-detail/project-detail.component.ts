@@ -11,7 +11,7 @@ import {ContentfulImageLink, Project} from '../common/model/project';
 })
 export class ProjectDetailComponent implements OnInit {
 
-  project: Entry<Project>;
+  project: Entry<Project> = { fields: {} } as Entry<Project>;
   // assets: Map<string, Asset>;
 
   assets: Array<Asset>;
