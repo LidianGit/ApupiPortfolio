@@ -1,0 +1,79 @@
+<div class="outer-container">
+  <div class="single-post">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <ul class="breadcrumbs flex align-items-center">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Blog</a></li>
+            <li>Single</li>
+          </ul><!-- .breadcrumbs -->
+        </div><!-- .col -->
+      </div><!-- .row -->
+
+      <div class="row">
+        <div class="col-12">
+
+          <app-image-gallery [slides]="slides" ></app-image-gallery>
+
+          <!--<div class="featured-img"  >-->
+            <!--<figure *ngFor="let image of project.fields.images" >-->
+              <!--<img src="{{ getImageUrl(image) }}" alt="blog">-->
+            <!--</figure>-->
+          <!--</div>&lt;!&ndash; .content-area &ndash;&gt;-->
+        </div><!-- .col -->
+
+        <div class="col-12 col-lg-8">
+          <div class="content-area">
+            <header class="entry-header">
+              <div class="post-meta">
+                <a href="#" (click)="goToList()" >Portfolio</a>
+              </div><!-- .meta-post -->
+
+              <h1 class="title">{{ project.fields.title }}</h1>
+              <span class="subtitle">{{ project.fields.subTitle }}</span>
+              <span class="byline">by <span class="author"><a href="#">{{ project.fields.author }}</a></span></span>
+            </header><!-- .entry-header -->
+
+            <div class="entry-content" [innerHTML]="project.fields.description | mdToHtml"></div>
+          </div><!-- .content-area -->
+        </div><!-- .col-12 -->
+
+        <aside class="col-12 col-lg-3 offset-lg-1">
+          <div class="entry-meta">
+            <div class="posted-date">
+              <label>Date</label>
+              <span class="date-format">{{ project.fields.creationDate | date }}</span>
+            </div><!-- .posted-date -->
+
+            <!--<div class="post-category">-->
+              <!--<label>Category</label>-->
+              <!--<span><a href="#">Photography</a></span>-->
+            <!--</div>-->
+
+            <div class="posted-tags">
+              <label>tags</label>
+              <span>
+                <div *ngFor="let tag of project.fields.tags let last = last;">
+                  <a href="#">{{ tag }}</a>
+                  <span *ngIf="!last" >,</span>
+                </div>
+              </span>
+            </div><!-- .entry-meta -->
+
+            <div class="post-share">
+              <label>share</label>
+              <ul>
+                <li class="fb"><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li class="gp"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li class="in"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li class="tw"><a href="#"><i class="fa fa-twitter"></i></a></li>
+              </ul>
+            </div><!-- .post-share -->
+          </div><!-- .entry-meta -->
+        </aside><!-- .col-md-3 -->
+
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .single-post -->
+</div>
