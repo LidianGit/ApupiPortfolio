@@ -1,16 +1,22 @@
-<div>
-  <div class="alert alert-info" role="alert" *ngFor="let project of projects.items">
-    <div class="d-flex flex-wrap flex-xl-nowrap flex-lg-nowrap flex-md-nowrap">
-      <div class="p-2">
-        <a href="{{ project.fields.url }}" target="_blank"><img src="{{ project.fields.projectImage.fields.file.url }}" class="rounded" width="196" /></a>
-      </div>
-      <div class="p-2">
-        <h5 class="alert-heading"><a href="{{ project.fields.url }}" target="_blank">{{ project.fields.title}}</a></h5>
-        <p><i>{{ project.fields.author }}</i></p>
-        <div>{{ project.fields.description }}</div>
-        <a href="{{ project.fields.url }}" target="_blank" class="btn btn-success">Go To project</a>
-        <button (click)="goToProjectDetailsPage(project.sys.id)" class="btn btn-info">project Details</button>
-      </div>
-    </div>
-  </div>
-</div>
+<div class="outer-container home-page">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3 no-padding" *ngFor="let project of projects.items" >
+        <div class="portfolio-content" >
+          <figure *ngIf="hasImageUrl(project.fields.mainImage)">
+            <img [src]="getImageUrl(project.fields.mainImage)" alt="">
+          </figure>
+          <figure *ngIf="!hasImageUrl(project.fields.mainImage)">
+            <img src="../assets/images/empty.jpg" alt="">
+          </figure>
+          <div class="entry-content flex flex-column align-items-center justify-content-center">
+            <h3><a href="#" >{{ project.fields.title}}</a></h3>
+            <ul class="flex flex-wrap justify-content-center">
+              <li><a href="#" (click)="goToProjectDetailsPage(project.sys.id)"  >{{ project.fields.subTitle}}</a></li>
+            </ul>
+          </div><!-- .entry-content -->
+        </div><!-- .portfolio-content -->
+      </div><!-- .col -->
+    </div><!-- .row -->
+  </div><!-- .container-fluid -->
+</div><!-- .outer-container -->

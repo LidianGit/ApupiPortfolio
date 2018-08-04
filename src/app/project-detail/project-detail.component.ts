@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ContentfulService} from '../contentful.service';
-import {Asset, AssetCollection, Entry} from 'contentful';
-import {ContentfulImageLink, Project} from '../common/model/project';
+import {Asset, Entry} from 'contentful';
+import {Project} from '../common/model/project';
 
 @Component({
   selector: 'app-project-detail',
@@ -12,8 +12,6 @@ import {ContentfulImageLink, Project} from '../common/model/project';
 export class ProjectDetailComponent implements OnInit {
 
   project: Entry<Project> = { fields: {} } as Entry<Project>;
-  // assets: Map<string, Asset>;
-
   assets: Array<Asset>;
   slides = [];
 
@@ -39,7 +37,6 @@ export class ProjectDetailComponent implements OnInit {
         });
     });
   }
-
 
   addSlide(asset: Asset): void {
     this.slides.push({

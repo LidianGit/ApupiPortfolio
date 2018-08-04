@@ -39,21 +39,27 @@ export class ContentfulService {
     // return this.client.getEntry(projectId).then(res => res);
   }
 
+  // getAllAssets(): Promise<Array<Asset>> {
+  //       return this.client.getAssets().then(res => {
+  //           return res.items;
+  //       });
+  // }
+
   getAssets(assetIds): Promise<Array<Asset>> {
     return this.client.getAssets({'sys.id[in]' : assetIds}).then(res => {
       return res.items;
     });
   }
 
-  // getAssets(assetIds): Promise<Map<string, Asset>> {
-  //   return this.client.getAssets({'sys.id[in]' : assetIds}).then(res => {
-  //        const assets = new Map<string, Asset>();
-  //        res.items.forEach(asset => {
-  //           assets.set(asset.sys.id, asset);
-  //        });
-  //        return assets;
-  //   });
-  // }
+    getAllAssets(): Promise<Map<string, Asset>> {
+    return this.client.getAssets().then(res => {
+         const assets = new Map<string, Asset>();
+         res.items.forEach(asset => {
+            assets.set(asset.sys.id, asset);
+         });
+         return assets;
+    });
+  }
 
   getAsset(assetId): Promise<Asset> {
     // if (this.assets.has(assetId)) {
