@@ -1,7 +1,20 @@
+
+<!--<div class="outer-container">-->
+  <!--<div class="container portfolio-page">-->
+    <!--<div class="row">-->
+      <!--<div class="col">-->
+        <!--<ul class="breadcrumbs flex align-items-center">-->
+          <!--<li><a href="#">Home</a></li>-->
+          <!--<li>Portfolio</li>-->
+        <!--</ul>&lt;!&ndash; .breadcrumbs &ndash;&gt;-->
+      <!--</div>&lt;!&ndash; .col &ndash;&gt;-->
+    <!--</div>&lt;!&ndash; .row &ndash;&gt;-->
+
+
 <div class="outer-container home-page">
-  <div class="container-fluid">
+  <div class="container-fluid portfolio-page">
     <div class="row">
-      <div class="col-12 col-md-6 col-lg-3 no-padding" *ngFor="let project of projects.items" >
+      <div class="col-12 col-md-6 col-lg-3 padding-5p project-list-item" *ngFor="let project of projects.items" >
         <div class="portfolio-content" >
           <figure *ngIf="hasImageUrl(project.fields.mainImage)">
             <img [src]="getImageUrl(project.fields.mainImage)" alt="">

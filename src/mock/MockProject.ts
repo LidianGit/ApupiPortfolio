@@ -3,7 +3,7 @@ import {Entry, Sys} from 'contentful';
 
 export const MOCK_PROJECT: Entry<Project> = {
     sys: {} as Sys,
-    toPlainObject().
+    toPlainObject(),
     // toPlainObject: {} as Entry<Project>,
     fields: {
         title: 'New Project',
