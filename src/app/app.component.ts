@@ -8,6 +8,7 @@ import {setTheme} from 'ngx-bootstrap';
 })
 export class AppComponent {
   title = 'myPortfolio';
+  open = false;
 
   constructor() {
     setTheme('bs4');
@@ -21,6 +22,7 @@ export class AppComponent {
       siteBranding.classList.toggle('hide');
       siteNavigation.classList.toggle('show');
       header.classList.toggle('no-shadow');
+      this.open = !this.open;
   }
 
 }

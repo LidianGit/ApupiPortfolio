@@ -1,10 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Asset, Entry, EntryCollection} from 'contentful';
+import {Component, OnInit} from '@angular/core';
+import {Asset, EntryCollection} from 'contentful';
 import {Router} from '@angular/router';
 import {ContentfulService} from '../contentful.service';
 import {ContentfulImageLink, Project} from '../common/model/project';
-import {MOCK_PROJECTS} from '../../mock/MockProject';
-import {isNullOrUndefined} from 'util';
 
 @Component({
     selector: 'app-project-list',
