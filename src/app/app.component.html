@@ -1,3 +1,32 @@
 <div>
   <router-outlet></router-outlet>
+  <header class="site-header">
+    <div class="site-branding">
+      <h1 class="site-title"><a href="index.html" rel="home"><img src="assets/images/logo.png" alt="Logo"></a></h1>
+    </div><!-- .site-branding -->
+
+    <div class="hamburger-menu">
+      <div class="menu-icon" (click)="toggleMenu()" >
+        <img src="assets/images/menu-icon.png" alt="menu icon">
+      </div><!-- .menu-icon -->
+
+      <div class="menu-close-icon">
+        <img src="assets/images/x.png" alt="menu close icon">
+      </div><!-- .menu-close-icon -->
+    </div><!-- .hamburger-menu -->
+  </header><!-- .site-header -->
+
+  <nav class="site-navigation flex flex-column justify-content-between">
+    <div class="site-branding d-none d-lg-block ">
+      <h1 class="site-title"><a href="index.html" rel="home"><img src="images/logo2.png" alt="Logo"></a></h1>
+    </div><!-- .site-branding -->
+
+    <ul class="main-menu flex flex-column justify-content-center">
+      <li class="current-menu-item"><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 </div>

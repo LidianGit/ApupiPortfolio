@@ -3,7 +3,7 @@ import {Entry, Sys} from 'contentful';
 
 export const MOCK_PROJECT: Entry<Project> = {
     sys: {} as Sys,
-    toPlainObject(),
+    toPlainObject: () => { return {} as Entry<Project>; },
     // toPlainObject: {} as Entry<Project>,
     fields: {
         title: 'New Project',
@@ -18,7 +18,6 @@ export const MOCK_PROJECT: Entry<Project> = {
 };
 
 export const MOCK_PROJECTS: Array<Entry<Project>> = [
-    MOCK_PROJECT,
     MOCK_PROJECT,
     MOCK_PROJECT,
     MOCK_PROJECT,
