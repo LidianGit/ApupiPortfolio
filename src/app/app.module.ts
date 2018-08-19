@@ -9,9 +9,11 @@ import { MdToHtmlPipe } from './md-to-html.pipe';
 import { ImageGalleryComponent } from './image-gallery/image-gallery.component';
 import {CarouselModule} from 'ngx-bootstrap';
 import { MenuComponent } from './menu/menu.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/projects', pathMatch: 'full'},
+  { path: 'contact', component: ContactFormComponent},
   { path: 'projects', component: ProjectListComponent},
   { path: 'project/:id', component: ProjectDetailComponent}
 ];
@@ -23,7 +25,8 @@ const routes: Routes = [
     ProjectDetailComponent,
     MdToHtmlPipe,
     ImageGalleryComponent,
-    MenuComponent
+    MenuComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
